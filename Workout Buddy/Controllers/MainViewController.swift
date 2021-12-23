@@ -21,12 +21,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.initializeView()
     }
     
     // MARK: - Functions
     
     func initializeView() {
+        self.view.backgroundColor = .white
+        
         self.view.addSubview(self.mainView)
         self.mainView.translatesAutoresizingMaskIntoConstraints = false
         self.mainView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
