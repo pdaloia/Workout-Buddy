@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426F82774EA9F0050F622 /* MainViewController.swift */; };
+		FEC426FB2774EAC30050F622 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FA2774EAC30050F622 /* MainView.swift */; };
 		FECD731E27678D8D0074BECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD731D27678D8D0074BECF /* AppDelegate.swift */; };
 		FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD731F27678D8D0074BECF /* SceneDelegate.swift */; };
 		FECD732227678D8D0074BECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD732127678D8D0074BECF /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FEC426F82774EA9F0050F622 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FEC426FA2774EAC30050F622 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FECD731A27678D8D0074BECF /* Workout Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECD731D27678D8D0074BECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FECD731F27678D8D0074BECF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 		FEC426F62774E9BF0050F622 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FEC426FA2774EAC30050F622 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -54,6 +59,7 @@
 		FEC426F72774E9C70050F622 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FEC426F82774EA9F0050F622 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 				FECD732227678D8D0074BECF /* ViewController.swift in Sources */,
 				FECD731E27678D8D0074BECF /* AppDelegate.swift in Sources */,
 				FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */,
+				FEC426FB2774EAC30050F622 /* MainView.swift in Sources */,
+				FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
