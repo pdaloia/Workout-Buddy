@@ -37,6 +37,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FEC426F52774E9B40050F622 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FEC426F62774E9BF0050F622 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FEC426F72774E9C70050F622 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		FECD731127678D8C0074BECF = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +77,9 @@
 		FECD731C27678D8D0074BECF /* Workout Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				FEC426F72774E9C70050F622 /* Controllers */,
+				FEC426F62774E9BF0050F622 /* Views */,
+				FEC426F52774E9B40050F622 /* Models */,
 				FECD731D27678D8D0074BECF /* AppDelegate.swift */,
 				FECD731F27678D8D0074BECF /* SceneDelegate.swift */,
 				FECD732127678D8D0074BECF /* ViewController.swift */,
