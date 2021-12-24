@@ -11,6 +11,7 @@
 		FEC426FB2774EAC30050F622 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FA2774EAC30050F622 /* MainView.swift */; };
 		FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FC27761EC10050F622 /* WorkoutSet.swift */; };
 		FEC426FF2776206F0050F622 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FE2776206F0050F622 /* Workout.swift */; };
+		FEC427012776231F0050F622 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC427002776231F0050F622 /* Routine.swift */; };
 		FECD731E27678D8D0074BECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD731D27678D8D0074BECF /* AppDelegate.swift */; };
 		FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD731F27678D8D0074BECF /* SceneDelegate.swift */; };
 		FECD732227678D8D0074BECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD732127678D8D0074BECF /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		FEC426FA2774EAC30050F622 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FEC426FC27761EC10050F622 /* WorkoutSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSet.swift; sourceTree = "<group>"; };
 		FEC426FE2776206F0050F622 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		FEC427002776231F0050F622 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		FECD731A27678D8D0074BECF /* Workout Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECD731D27678D8D0074BECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FECD731F27678D8D0074BECF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			children = (
 				FEC426FC27761EC10050F622 /* WorkoutSet.swift */,
 				FEC426FE2776206F0050F622 /* Workout.swift */,
+				FEC427002776231F0050F622 /* Routine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */,
 				FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */,
 				FEC426FB2774EAC30050F622 /* MainView.swift in Sources */,
+				FEC427012776231F0050F622 /* Routine.swift in Sources */,
 				FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
