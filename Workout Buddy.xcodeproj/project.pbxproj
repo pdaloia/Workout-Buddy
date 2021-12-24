@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426F82774EA9F0050F622 /* MainViewController.swift */; };
 		FEC426FB2774EAC30050F622 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FA2774EAC30050F622 /* MainView.swift */; };
+		FEC426FD27761EC20050F622 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FC27761EC10050F622 /* Set.swift */; };
 		FECD731E27678D8D0074BECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD731D27678D8D0074BECF /* AppDelegate.swift */; };
 		FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD731F27678D8D0074BECF /* SceneDelegate.swift */; };
 		FECD732227678D8D0074BECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD732127678D8D0074BECF /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		FEC426F82774EA9F0050F622 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FEC426FA2774EAC30050F622 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FEC426FC27761EC10050F622 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		FECD731A27678D8D0074BECF /* Workout Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECD731D27678D8D0074BECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FECD731F27678D8D0074BECF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		FEC426F52774E9B40050F622 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FEC426FC27761EC10050F622 /* Set.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				FECD732227678D8D0074BECF /* ViewController.swift in Sources */,
 				FECD731E27678D8D0074BECF /* AppDelegate.swift in Sources */,
+				FEC426FD27761EC20050F622 /* Set.swift in Sources */,
 				FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */,
 				FEC426FB2774EAC30050F622 /* MainView.swift in Sources */,
 				FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */,
