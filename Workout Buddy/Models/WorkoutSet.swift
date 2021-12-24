@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Set {
+class WorkoutSet {
     
     var reps: Int
     var weight: Double
