@@ -9,10 +9,12 @@ import Foundation
 
 class Workout {
     
+    var workoutName: String
     var sets: [WorkoutSet]
     
-    init(sets: [WorkoutSet]) {
+    init(workoutName: String, sets: [WorkoutSet]) {
         
+        self.workoutName = workoutName
         self.sets = sets
         
     }
