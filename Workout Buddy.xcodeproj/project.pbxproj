@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE630C44277F929400887176 /* CreateSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE630C43277F929400887176 /* CreateSetViewController.swift */; };
+		FE630C46277F92A700887176 /* CreateSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE630C45277F92A700887176 /* CreateSetView.swift */; };
 		FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426F82774EA9F0050F622 /* MainViewController.swift */; };
 		FEC426FB2774EAC30050F622 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FA2774EAC30050F622 /* MainView.swift */; };
 		FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FC27761EC10050F622 /* WorkoutSet.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE630C43277F929400887176 /* CreateSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetViewController.swift; sourceTree = "<group>"; };
+		FE630C45277F92A700887176 /* CreateSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetView.swift; sourceTree = "<group>"; };
 		FEC426F82774EA9F0050F622 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FEC426FA2774EAC30050F622 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FEC426FC27761EC10050F622 /* WorkoutSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSet.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 		FEC426F62774E9BF0050F622 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FEC427032776296F0050F622 /* Create Routine Views */,
 				FEC426FA2774EAC30050F622 /* MainView.swift */,
 			);
 			path = Views;
@@ -66,9 +71,26 @@
 		FEC426F72774E9C70050F622 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FEC42702277629590050F622 /* Create Routine Controllers */,
 				FEC426F82774EA9F0050F622 /* MainViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FEC42702277629590050F622 /* Create Routine Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE630C43277F929400887176 /* CreateSetViewController.swift */,
+			);
+			path = "Create Routine Controllers";
+			sourceTree = "<group>";
+		};
+		FEC427032776296F0050F622 /* Create Routine Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE630C45277F92A700887176 /* CreateSetView.swift */,
+			);
+			path = "Create Routine Views";
 			sourceTree = "<group>";
 		};
 		FECD731127678D8C0074BECF = {
@@ -178,7 +200,9 @@
 				FEC426FF2776206F0050F622 /* Workout.swift in Sources */,
 				FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */,
 				FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */,
+				FE630C46277F92A700887176 /* CreateSetView.swift in Sources */,
 				FEC426FB2774EAC30050F622 /* MainView.swift in Sources */,
+				FE630C44277F929400887176 /* CreateSetViewController.swift in Sources */,
 				FEC427012776231F0050F622 /* Routine.swift in Sources */,
 				FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */,
 			);
