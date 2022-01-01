@@ -11,10 +11,20 @@ class MainView: UIView {
 
     // MARK: - Properties
     
+    var delegate: MainViewDelegate?
+    
     let basicLabel: UILabel = {
         let basicLabel: UILabel = UILabel()
         basicLabel.text = "Workout Buddy"
         return basicLabel
+    }()
+    
+    let createSetButton: UIButton = {
+        let view = UIButton()
+        view.setTitle("Create Workout Set", for: .normal)
+        view.setTitleColor(.systemBlue, for: .normal)
+        view.addTarget(self, action: #selector(addWorkoutSetButtonPressed), for: .touchUpInside)
+        return view
     }()
     
     
@@ -33,10 +43,31 @@ class MainView: UIView {
     // MARK: - Function
     
     func initializeView() {
+        
         self.addSubview(self.basicLabel)
         basicLabel.translatesAutoresizingMaskIntoConstraints = false
         basicLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         basicLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        self.addSubview(createSetButton)
+        createSetButton.translatesAutoresizingMaskIntoConstraints = false
+        createSetButton.topAnchor.constraint(equalTo: basicLabel.bottomAnchor).isActive = true
+        createSetButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+    }
+    
+    @objc func addWorkoutSetButtonPressed() {
+        
+        if let delegate = delegate {
+            delegate.addWorkoutSetButtonPressed()
+        }
+        
     }
 
+}
+
+protocol MainViewDelegate {
+    
+    func addWorkoutSetButtonPressed()
+    
 }

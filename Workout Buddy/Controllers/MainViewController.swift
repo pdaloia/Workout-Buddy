@@ -20,7 +20,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        mainView.delegate = self
         self.initializeView()
     }
     
@@ -37,4 +38,16 @@ class MainViewController: UIViewController {
         self.mainView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
     }
 
+}
+
+extension MainViewController: MainViewDelegate {
+    
+    func addWorkoutSetButtonPressed() {
+        
+        let createSetViewController = CreateSetViewController()
+        self.present(createSetViewController, animated: true, completion: nil)
+        print("lolol")
+        
+    }
+    
 }
