@@ -12,6 +12,7 @@ class CreateSetView: UIView {
     let weightInput: UITextField = {
         let view = UITextField()
         view.placeholder = "Weight"
+        view.keyboardType = .decimalPad
         return view
     }()
     
@@ -24,6 +25,7 @@ class CreateSetView: UIView {
     let repsInput: UITextField = {
         let view = UITextField()
         view.placeholder = "Reps"
+        view.keyboardType = .numberPad
         return view
     }()
     
@@ -44,6 +46,9 @@ class CreateSetView: UIView {
     }
     
     func configureViewComponents() {
+        
+        weightInput.delegate = self
+        repsInput.delegate = self
         
         self.addSubview(weightInputLabel)
         weightInputLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -69,6 +74,17 @@ class CreateSetView: UIView {
         repsInput.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         repsInput.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20).isActive = true
         
+    }
+    
+}
+
+extension CreateSetView: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
         
     }
     
