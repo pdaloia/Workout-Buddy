@@ -27,6 +27,14 @@ class MainView: UIView {
         return view
     }()
     
+    let createWorkoutButton: UIButton = {
+        let view = UIButton()
+        view.setTitle("Create Workout", for: .normal)
+        view.setTitleColor(.systemBlue, for: .normal)
+        view.addTarget(self, action: #selector(createWorkoutButtonPressed), for: .touchUpInside)
+        return view
+    }()
+    
     
     // MARK: - Lifecycle
     
@@ -54,6 +62,11 @@ class MainView: UIView {
         createSetButton.topAnchor.constraint(equalTo: basicLabel.bottomAnchor).isActive = true
         createSetButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
+        self.addSubview(createWorkoutButton)
+        createWorkoutButton.translatesAutoresizingMaskIntoConstraints = false
+        createWorkoutButton.topAnchor.constraint(equalTo: createSetButton.bottomAnchor).isActive = true
+        createWorkoutButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
     }
     
     @objc func addWorkoutSetButtonPressed() {
@@ -63,11 +76,21 @@ class MainView: UIView {
         }
         
     }
+    
+    @objc func createWorkoutButtonPressed() {
+        
+        if let delegate = delegate {
+            delegate.createWorkoutButtonPressed()
+        }
+        
+    }
 
 }
 
 protocol MainViewDelegate {
     
     func addWorkoutSetButtonPressed()
+    
+    func createWorkoutButtonPressed()
     
 }

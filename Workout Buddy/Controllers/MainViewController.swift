@@ -46,7 +46,13 @@ extension MainViewController: MainViewDelegate {
         
         let createSetViewController = CreateSetViewController()
         self.present(createSetViewController, animated: true, completion: nil)
-        print("lolol")
+        
+    }
+    
+    func createWorkoutButtonPressed() {
+        
+        let createWorkoutViewController = CreateWorkoutViewController()
+        self.present(createWorkoutViewController, animated: true, completion: nil)
         
     }
     
