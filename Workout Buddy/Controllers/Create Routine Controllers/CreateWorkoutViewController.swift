@@ -24,6 +24,8 @@ class CreateWorkoutViewController: UIViewController {
         
         self.view.backgroundColor = .systemBackground
         
+        initializeView()
+        
     }
     
     //MARK: - Functions
