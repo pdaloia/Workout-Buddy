@@ -56,4 +56,11 @@ extension MainViewController: MainViewDelegate {
         
     }
     
+    func createRoutineButtonPressed() {
+        
+        let createRoutineViewController = CreateRoutineViewController()
+        self.present(createRoutineViewController, animated: true, completion: nil)
+        
+    }
+    
 }
