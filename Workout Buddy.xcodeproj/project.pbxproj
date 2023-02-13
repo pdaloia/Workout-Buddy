@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE307BDA2999DC2E00D0EC25 /* InfoTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BD92999DC2E00D0EC25 /* InfoTabViewController.swift */; };
+		FE307BDC2999DC4100D0EC25 /* RoutinesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BDB2999DC4100D0EC25 /* RoutinesTabViewController.swift */; };
+		FE307BDE2999DC4E00D0EC25 /* WorkoutTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BDD2999DC4E00D0EC25 /* WorkoutTabViewController.swift */; };
+		FE307BE02999DC5B00D0EC25 /* HistoryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BDF2999DC5B00D0EC25 /* HistoryTabViewController.swift */; };
 		FE630C44277F929400887176 /* CreateSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE630C43277F929400887176 /* CreateSetViewController.swift */; };
 		FE630C46277F92A700887176 /* CreateSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE630C45277F92A700887176 /* CreateSetView.swift */; };
 		FEB9B6FE27827D6B00CAB224 /* CreateWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9B6FD27827D6B00CAB224 /* CreateWorkoutViewController.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE307BD92999DC2E00D0EC25 /* InfoTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTabViewController.swift; sourceTree = "<group>"; };
+		FE307BDB2999DC4100D0EC25 /* RoutinesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesTabViewController.swift; sourceTree = "<group>"; };
+		FE307BDD2999DC4E00D0EC25 /* WorkoutTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabViewController.swift; sourceTree = "<group>"; };
+		FE307BDF2999DC5B00D0EC25 /* HistoryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabViewController.swift; sourceTree = "<group>"; };
 		FE630C43277F929400887176 /* CreateSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetViewController.swift; sourceTree = "<group>"; };
 		FE630C45277F92A700887176 /* CreateSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetView.swift; sourceTree = "<group>"; };
 		FEB9B6FD27827D6B00CAB224 /* CreateWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,7 @@
 		FE307BD12999D99300D0EC25 /* Info Tab Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FE307BD92999DC2E00D0EC25 /* InfoTabViewController.swift */,
 			);
 			path = "Info Tab Controllers";
 			sourceTree = "<group>";
@@ -67,6 +76,7 @@
 		FE307BD22999D9AA00D0EC25 /* Routines Tab Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FE307BDB2999DC4100D0EC25 /* RoutinesTabViewController.swift */,
 			);
 			path = "Routines Tab Controllers";
 			sourceTree = "<group>";
@@ -74,6 +84,7 @@
 		FE307BD32999D9B400D0EC25 /* Workout Tabs Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FE307BDD2999DC4E00D0EC25 /* WorkoutTabViewController.swift */,
 			);
 			path = "Workout Tabs Controllers";
 			sourceTree = "<group>";
@@ -81,6 +92,7 @@
 		FE307BD42999D9BF00D0EC25 /* History Tabs Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FE307BDF2999DC5B00D0EC25 /* HistoryTabViewController.swift */,
 			);
 			path = "History Tabs Controllers";
 			sourceTree = "<group>";
@@ -275,16 +287,20 @@
 				FECD732227678D8D0074BECF /* ViewController.swift in Sources */,
 				FECD731E27678D8D0074BECF /* AppDelegate.swift in Sources */,
 				FEC426FF2776206F0050F622 /* Workout.swift in Sources */,
+				FE307BDE2999DC4E00D0EC25 /* WorkoutTabViewController.swift in Sources */,
 				FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */,
 				FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */,
 				FE630C46277F92A700887176 /* CreateSetView.swift in Sources */,
 				FEB9B6FE27827D6B00CAB224 /* CreateWorkoutViewController.swift in Sources */,
 				FEC426FB2774EAC30050F622 /* MainView.swift in Sources */,
+				FE307BDC2999DC4100D0EC25 /* RoutinesTabViewController.swift in Sources */,
+				FE307BE02999DC5B00D0EC25 /* HistoryTabViewController.swift in Sources */,
 				FEE45C562783D27300BCD3DA /* CreateRoutineViewController.swift in Sources */,
 				FE630C44277F929400887176 /* CreateSetViewController.swift in Sources */,
 				FEC427012776231F0050F622 /* Routine.swift in Sources */,
 				FEE45C542783D25B00BCD3DA /* CreateRoutineView.swift in Sources */,
 				FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */,
+				FE307BDA2999DC2E00D0EC25 /* InfoTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
