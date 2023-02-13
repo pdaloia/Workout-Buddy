@@ -57,6 +57,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE307BD12999D99300D0EC25 /* Info Tab Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Info Tab Controllers";
+			sourceTree = "<group>";
+		};
+		FE307BD22999D9AA00D0EC25 /* Routines Tab Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Routines Tab Controllers";
+			sourceTree = "<group>";
+		};
+		FE307BD32999D9B400D0EC25 /* Workout Tabs Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Workout Tabs Controllers";
+			sourceTree = "<group>";
+		};
+		FE307BD42999D9BF00D0EC25 /* History Tabs Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "History Tabs Controllers";
+			sourceTree = "<group>";
+		};
+		FE307BD52999DABA00D0EC25 /* Info Tab Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Info Tab Views";
+			sourceTree = "<group>";
+		};
+		FE307BD62999DAC700D0EC25 /* Routines Tab Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Routines Tab Views";
+			sourceTree = "<group>";
+		};
+		FE307BD72999DAD400D0EC25 /* Workout Tab Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Workout Tab Views";
+			sourceTree = "<group>";
+		};
+		FE307BD82999DADD00D0EC25 /* History Tab Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "\U0010History Tab Views";
+			sourceTree = "<group>";
+		};
 		FEC426F52774E9B40050F622 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +126,10 @@
 		FEC426F62774E9BF0050F622 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FE307BD82999DADD00D0EC25 /* History Tab Views */,
+				FE307BD72999DAD400D0EC25 /* Workout Tab Views */,
+				FE307BD62999DAC700D0EC25 /* Routines Tab Views */,
+				FE307BD52999DABA00D0EC25 /* Info Tab Views */,
 				FEC427032776296F0050F622 /* Create Routine Views */,
 				FEC426FA2774EAC30050F622 /* MainView.swift */,
 			);
@@ -79,6 +139,10 @@
 		FEC426F72774E9C70050F622 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FE307BD42999D9BF00D0EC25 /* History Tabs Controllers */,
+				FE307BD32999D9B400D0EC25 /* Workout Tabs Controllers */,
+				FE307BD22999D9AA00D0EC25 /* Routines Tab Controllers */,
+				FE307BD12999D99300D0EC25 /* Info Tab Controllers */,
 				FEC42702277629590050F622 /* Create Routine Controllers */,
 				FEC426F82774EA9F0050F622 /* MainViewController.swift */,
 			);
