@@ -9,12 +9,37 @@ import UIKit
 
 class RoutinesTabView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    //MARK: - Properties
+    
+    //MARK: - Views
+    
+    private lazy var viewLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Routine Tab"
+        return label
+    }()
+    
+    //MARK: - Lifecycle
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.initializeView()
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Functions
+    
+    func initializeView() {
+        
+        self.addSubview(self.viewLabel)
+        viewLabel.translatesAutoresizingMaskIntoConstraints = false
+        viewLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        viewLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        
+    }
 
 }
