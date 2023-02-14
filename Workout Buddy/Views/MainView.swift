@@ -11,37 +11,7 @@ class MainView: UIView {
 
     // MARK: - Properties
     
-    var delegate: MainViewDelegate?
-    
-    let basicLabel: UILabel = {
-        let basicLabel: UILabel = UILabel()
-        basicLabel.text = "Workout Buddy"
-        return basicLabel
-    }()
-    
-    let createSetButton: UIButton = {
-        let view = UIButton()
-        view.setTitle("Create Workout Set", for: .normal)
-        view.setTitleColor(.systemBlue, for: .normal)
-        view.addTarget(self, action: #selector(addWorkoutSetButtonPressed), for: .touchUpInside)
-        return view
-    }()
-    
-    let createWorkoutButton: UIButton = {
-        let view = UIButton()
-        view.setTitle("Create Workout", for: .normal)
-        view.setTitleColor(.systemBlue, for: .normal)
-        view.addTarget(self, action: #selector(createWorkoutButtonPressed), for: .touchUpInside)
-        return view
-    }()
-    
-    let createRoutineButton: UIButton = {
-        let view = UIButton()
-        view.setTitle("Create Routine", for: .normal)
-        view.setTitleColor(.systemBlue, for: .normal)
-        view.addTarget(self, action: #selector(createRoutineButtonPressed), for: .touchUpInside)
-        return view
-    }()
+    //MARK: - Views
     
     
     // MARK: - Lifecycle
@@ -60,60 +30,6 @@ class MainView: UIView {
     
     func initializeView() {
         
-        self.addSubview(self.basicLabel)
-        basicLabel.translatesAutoresizingMaskIntoConstraints = false
-        basicLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        basicLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        
-        self.addSubview(createSetButton)
-        createSetButton.translatesAutoresizingMaskIntoConstraints = false
-        createSetButton.topAnchor.constraint(equalTo: basicLabel.bottomAnchor).isActive = true
-        createSetButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        
-        self.addSubview(createWorkoutButton)
-        createWorkoutButton.translatesAutoresizingMaskIntoConstraints = false
-        createWorkoutButton.topAnchor.constraint(equalTo: createSetButton.bottomAnchor).isActive = true
-        createWorkoutButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        
-        self.addSubview(createRoutineButton)
-        createRoutineButton.translatesAutoresizingMaskIntoConstraints = false
-        createRoutineButton.topAnchor.constraint(equalTo: createWorkoutButton.bottomAnchor).isActive = true
-        createRoutineButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        
-    }
-    
-    @objc func addWorkoutSetButtonPressed() {
-        
-        if let delegate = delegate {
-            delegate.addWorkoutSetButtonPressed()
-        }
-        
-    }
-    
-    @objc func createWorkoutButtonPressed() {
-        
-        if let delegate = delegate {
-            delegate.createWorkoutButtonPressed()
-        }
-        
-    }
-    
-    @objc func createRoutineButtonPressed() {
-        
-        if let delegate = delegate {
-            delegate.createRoutineButtonPressed()
-        }
-        
     }
 
-}
-
-protocol MainViewDelegate {
-    
-    func addWorkoutSetButtonPressed()
-    
-    func createWorkoutButtonPressed()
-    
-    func createRoutineButtonPressed()
-    
 }

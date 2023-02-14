@@ -15,10 +15,6 @@
 		FE307BE4299B3C9E00D0EC25 /* RoutinesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BE3299B3C9E00D0EC25 /* RoutinesTabView.swift */; };
 		FE307BE6299B3CB100D0EC25 /* WorkoutTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BE5299B3CB100D0EC25 /* WorkoutTabView.swift */; };
 		FE307BE8299B3CBE00D0EC25 /* HistoryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BE7299B3CBE00D0EC25 /* HistoryTabView.swift */; };
-		FE630C44277F929400887176 /* CreateSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE630C43277F929400887176 /* CreateSetViewController.swift */; };
-		FE630C46277F92A700887176 /* CreateSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE630C45277F92A700887176 /* CreateSetView.swift */; };
-		FEB9B6FE27827D6B00CAB224 /* CreateWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9B6FD27827D6B00CAB224 /* CreateWorkoutViewController.swift */; };
-		FEB9B70027827D8400CAB224 /* CreateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9B6FF27827D8400CAB224 /* CreateWorkoutView.swift */; };
 		FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426F82774EA9F0050F622 /* MainViewController.swift */; };
 		FEC426FB2774EAC30050F622 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FA2774EAC30050F622 /* MainView.swift */; };
 		FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FC27761EC10050F622 /* WorkoutSet.swift */; };
@@ -29,8 +25,6 @@
 		FECD732227678D8D0074BECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD732127678D8D0074BECF /* ViewController.swift */; };
 		FECD732727678D930074BECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FECD732627678D930074BECF /* Assets.xcassets */; };
 		FECD732A27678D930074BECF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FECD732827678D930074BECF /* LaunchScreen.storyboard */; };
-		FEE45C542783D25B00BCD3DA /* CreateRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE45C532783D25B00BCD3DA /* CreateRoutineView.swift */; };
-		FEE45C562783D27300BCD3DA /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE45C552783D27300BCD3DA /* CreateRoutineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +36,6 @@
 		FE307BE3299B3C9E00D0EC25 /* RoutinesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesTabView.swift; sourceTree = "<group>"; };
 		FE307BE5299B3CB100D0EC25 /* WorkoutTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabView.swift; sourceTree = "<group>"; };
 		FE307BE7299B3CBE00D0EC25 /* HistoryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabView.swift; sourceTree = "<group>"; };
-		FE630C43277F929400887176 /* CreateSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetViewController.swift; sourceTree = "<group>"; };
-		FE630C45277F92A700887176 /* CreateSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetView.swift; sourceTree = "<group>"; };
-		FEB9B6FD27827D6B00CAB224 /* CreateWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutViewController.swift; sourceTree = "<group>"; };
-		FEB9B6FF27827D8400CAB224 /* CreateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutView.swift; sourceTree = "<group>"; };
 		FEC426F82774EA9F0050F622 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FEC426FA2774EAC30050F622 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FEC426FC27761EC10050F622 /* WorkoutSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSet.swift; sourceTree = "<group>"; };
@@ -58,8 +48,6 @@
 		FECD732627678D930074BECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FECD732927678D930074BECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FECD732B27678D930074BECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEE45C532783D25B00BCD3DA /* CreateRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoutineView.swift; sourceTree = "<group>"; };
-		FEE45C552783D27300BCD3DA /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +142,6 @@
 				FE307BD72999DAD400D0EC25 /* Workout Tab Views */,
 				FE307BD62999DAC700D0EC25 /* Routines Tab Views */,
 				FE307BD52999DABA00D0EC25 /* Info Tab Views */,
-				FEC427032776296F0050F622 /* Create Routine Views */,
 				FEC426FA2774EAC30050F622 /* MainView.swift */,
 			);
 			path = Views;
@@ -167,30 +154,9 @@
 				FE307BD32999D9B400D0EC25 /* Workout Tabs Controllers */,
 				FE307BD22999D9AA00D0EC25 /* Routines Tab Controllers */,
 				FE307BD12999D99300D0EC25 /* Info Tab Controllers */,
-				FEC42702277629590050F622 /* Create Routine Controllers */,
 				FEC426F82774EA9F0050F622 /* MainViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		FEC42702277629590050F622 /* Create Routine Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FE630C43277F929400887176 /* CreateSetViewController.swift */,
-				FEB9B6FD27827D6B00CAB224 /* CreateWorkoutViewController.swift */,
-				FEE45C552783D27300BCD3DA /* CreateRoutineViewController.swift */,
-			);
-			path = "Create Routine Controllers";
-			sourceTree = "<group>";
-		};
-		FEC427032776296F0050F622 /* Create Routine Views */ = {
-			isa = PBXGroup;
-			children = (
-				FE630C45277F92A700887176 /* CreateSetView.swift */,
-				FEB9B6FF27827D8400CAB224 /* CreateWorkoutView.swift */,
-				FEE45C532783D25B00BCD3DA /* CreateRoutineView.swift */,
-			);
-			path = "Create Routine Views";
 			sourceTree = "<group>";
 		};
 		FECD731127678D8C0074BECF = {
@@ -295,7 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB9B70027827D8400CAB224 /* CreateWorkoutView.swift in Sources */,
 				FE307BE8299B3CBE00D0EC25 /* HistoryTabView.swift in Sources */,
 				FECD732227678D8D0074BECF /* ViewController.swift in Sources */,
 				FE307BE2299B3C8400D0EC25 /* InfoTabView.swift in Sources */,
@@ -306,15 +271,10 @@
 				FE307BDE2999DC4E00D0EC25 /* WorkoutTabViewController.swift in Sources */,
 				FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */,
 				FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */,
-				FE630C46277F92A700887176 /* CreateSetView.swift in Sources */,
-				FEB9B6FE27827D6B00CAB224 /* CreateWorkoutViewController.swift in Sources */,
 				FEC426FB2774EAC30050F622 /* MainView.swift in Sources */,
 				FE307BDC2999DC4100D0EC25 /* RoutinesTabViewController.swift in Sources */,
 				FE307BE02999DC5B00D0EC25 /* HistoryTabViewController.swift in Sources */,
-				FEE45C562783D27300BCD3DA /* CreateRoutineViewController.swift in Sources */,
-				FE630C44277F929400887176 /* CreateSetViewController.swift in Sources */,
 				FEC427012776231F0050F622 /* Routine.swift in Sources */,
-				FEE45C542783D25B00BCD3DA /* CreateRoutineView.swift in Sources */,
 				FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */,
 				FE307BDA2999DC2E00D0EC25 /* InfoTabViewController.swift in Sources */,
 			);
