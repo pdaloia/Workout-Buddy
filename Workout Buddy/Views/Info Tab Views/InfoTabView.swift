@@ -15,7 +15,7 @@ class InfoTabView: UIView {
     
     private lazy var viewLabel: UILabel = {
         let label = UILabel()
-        label.text = "Info Tab"
+        label.text = "Personal Information"
         return label
     }()
     
@@ -38,7 +38,7 @@ class InfoTabView: UIView {
         self.addSubview(self.viewLabel)
         viewLabel.translatesAutoresizingMaskIntoConstraints = false
         viewLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        viewLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        viewLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         
     }
     

@@ -32,10 +32,16 @@ class InfoTabViewController: UIViewController {
         
         self.view.addSubview(self.infoTabView)
         self.infoTabView.translatesAutoresizingMaskIntoConstraints = false
-        self.infoTabView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.infoTabView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         self.infoTabView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         self.infoTabView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        
+        if #available(iOS 11, *) {
+            self.infoTabView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+            self.infoTabView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        } else {
+            self.infoTabView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+            self.infoTabView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        }
         
     }
 
