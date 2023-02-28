@@ -38,7 +38,12 @@ class InfoTabView: UIView {
         self.addSubview(self.viewLabel)
         viewLabel.translatesAutoresizingMaskIntoConstraints = false
         viewLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        viewLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        
+        if #available(iOS 11, *) {
+            self.viewLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        } else {
+            self.viewLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        }
         
     }
     
