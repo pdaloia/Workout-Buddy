@@ -19,6 +19,28 @@ class InfoTabView: UIView {
         return label
     }()
     
+    private lazy var ageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Age:"
+        return label
+    }()
+    
+    private lazy var ageInputField: UITextField = {
+        let textField = UITextField()
+        return textField
+    }()
+    
+    private lazy var weightLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Weight:"
+        return label
+    }()
+    
+    private lazy var weightInputField: UITextField = {
+        let textField = UITextField()
+        return textField
+    }()
+    
     //MARK: - Lifecycle
 
     override init(frame: CGRect) {
