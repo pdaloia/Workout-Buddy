@@ -30,6 +30,17 @@ class InfoTabView: UIView {
         return textField
     }()
     
+    private lazy var heightLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Weight:"
+        return label
+    }()
+    
+    private lazy var heightInputField: UITextField = {
+        let textField = UITextField()
+        return textField
+    }()
+    
     private lazy var weightLabel: UILabel = {
         let label = UILabel()
         label.text = "Weight:"
@@ -57,7 +68,16 @@ class InfoTabView: UIView {
     
     func initializeView() {
         
+        //add the subviews
         self.addSubview(self.viewLabel)
+        self.addSubview(self.ageLabel)
+        self.addSubview(self.ageInputField)
+        self.addSubview(self.heightLabel)
+        self.addSubview(self.heightInputField)
+        self.addSubview(self.weightLabel)
+        self.addSubview(self.weightInputField)
+        
+        //configure auto layout constraints
         viewLabel.translatesAutoresizingMaskIntoConstraints = false
         viewLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
@@ -66,6 +86,15 @@ class InfoTabView: UIView {
         } else {
             self.viewLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         }
+        
+        ageLabel.translatesAutoresizingMaskIntoConstraints = false
+        ageLabel.topAnchor.constraint(equalTo: self.viewLabel.bottomAnchor).isActive = true
+        ageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        ageLabel.trailingAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        ageInputField.topAnchor.constraint(equalTo: self.viewLabel.bottomAnchor).isActive = true
+        ageInputField.leadingAnchor.constraint(equalTo: self.ageLabel.trailingAnchor).isActive = true
+        ageInputField.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         
     }
     
