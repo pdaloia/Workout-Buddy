@@ -16,6 +16,8 @@ class InfoTabView: UIView {
     private lazy var viewLabel: UILabel = {
         let label = UILabel()
         label.text = "Personal Information"
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -52,6 +54,22 @@ class InfoTabView: UIView {
         return textField
     }()
     
+    private lazy var labelStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private lazy var inputStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     //MARK: - Lifecycle
 
     override init(frame: CGRect) {
@@ -68,33 +86,42 @@ class InfoTabView: UIView {
     
     func initializeView() {
         
-        //add the subviews
-        self.addSubview(self.viewLabel)
-        self.addSubview(self.ageLabel)
-        self.addSubview(self.ageInputField)
-        self.addSubview(self.heightLabel)
-        self.addSubview(self.heightInputField)
-        self.addSubview(self.weightLabel)
-        self.addSubview(self.weightInputField)
+        //add and initalize view's label
+        self.addSubview(viewLabel)
+        NSLayoutConstraint.activate([
+            viewLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            viewLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            viewLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            viewLabel.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 1/10)
+        ])
         
-        //configure auto layout constraints
-        viewLabel.translatesAutoresizingMaskIntoConstraints = false
-        viewLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        //add views to stack views
+        labelStackView.addArrangedSubview(ageLabel)
+        labelStackView.addArrangedSubview(heightLabel)
+        labelStackView.addArrangedSubview(weightLabel)
         
-        if #available(iOS 11, *) {
-            self.viewLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
-        } else {
-            self.viewLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        }
+        inputStackView.addArrangedSubview(ageInputField)
+        inputStackView.addArrangedSubview(heightInputField)
+        inputStackView.addArrangedSubview(weightInputField)
         
-        ageLabel.translatesAutoresizingMaskIntoConstraints = false
-        ageLabel.topAnchor.constraint(equalTo: self.viewLabel.bottomAnchor).isActive = true
-        ageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        ageLabel.trailingAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        //add the stack views to the view
+        self.addSubview(labelStackView)
+        self.addSubview(inputStackView)
         
-        ageInputField.topAnchor.constraint(equalTo: self.viewLabel.bottomAnchor).isActive = true
-        ageInputField.leadingAnchor.constraint(equalTo: self.ageLabel.trailingAnchor).isActive = true
-        ageInputField.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        //set constraints for stack views
+        NSLayoutConstraint.activate([
+            labelStackView.topAnchor.constraint(equalTo: viewLabel.bottomAnchor),
+            labelStackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            labelStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            labelStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            inputStackView.topAnchor.constraint(equalTo: labelStackView .topAnchor),
+            inputStackView.leadingAnchor.constraint(equalTo: labelStackView.trailingAnchor),
+            inputStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            inputStackView.heightAnchor.constraint(equalTo: labelStackView.heightAnchor)
+        ])
         
     }
     
