@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE231CF729B6729B0022F549 /* UIAnimatedPlaceHolderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE231CF629B6729A0022F549 /* UIAnimatedPlaceHolderTextField.swift */; };
 		FE307BDA2999DC2E00D0EC25 /* InfoTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BD92999DC2E00D0EC25 /* InfoTabViewController.swift */; };
 		FE307BDC2999DC4100D0EC25 /* RoutinesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BDB2999DC4100D0EC25 /* RoutinesTabViewController.swift */; };
 		FE307BDE2999DC4E00D0EC25 /* WorkoutTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BDD2999DC4E00D0EC25 /* WorkoutTabViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE231CF629B6729A0022F549 /* UIAnimatedPlaceHolderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimatedPlaceHolderTextField.swift; sourceTree = "<group>"; };
 		FE307BD92999DC2E00D0EC25 /* InfoTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTabViewController.swift; sourceTree = "<group>"; };
 		FE307BDB2999DC4100D0EC25 /* RoutinesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesTabViewController.swift; sourceTree = "<group>"; };
 		FE307BDD2999DC4E00D0EC25 /* WorkoutTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE231CF529B671D30022F549 /* Reusable Components */ = {
+			isa = PBXGroup;
+			children = (
+				FE231CF629B6729A0022F549 /* UIAnimatedPlaceHolderTextField.swift */,
+			);
+			path = "Reusable Components";
+			sourceTree = "<group>";
+		};
 		FE307BD12999D99300D0EC25 /* Info Tab Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 		FECD731C27678D8D0074BECF /* Workout Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				FE231CF529B671D30022F549 /* Reusable Components */,
 				FEC426F72774E9C70050F622 /* Controllers */,
 				FEC426F62774E9BF0050F622 /* Views */,
 				FEC426F52774E9B40050F622 /* Models */,
@@ -266,6 +277,7 @@
 				FE307BE6299B3CB100D0EC25 /* WorkoutTabView.swift in Sources */,
 				FEC426FF2776206F0050F622 /* Workout.swift in Sources */,
 				FE307BDE2999DC4E00D0EC25 /* WorkoutTabViewController.swift in Sources */,
+				FE231CF729B6729B0022F549 /* UIAnimatedPlaceHolderTextField.swift in Sources */,
 				FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */,
 				FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */,
 				FE307BDC2999DC4100D0EC25 /* RoutinesTabViewController.swift in Sources */,

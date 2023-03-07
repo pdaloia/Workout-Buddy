@@ -70,6 +70,12 @@ class InfoTabView: UIView {
         return stackView
     }()
     
+    private lazy var animatedTextField: UIAnimatedPlaceHolderTextField = {
+        let testTextField = UIAnimatedPlaceHolderTextField(initialPlaceholder: "This is a test", editedPlaceholder: "Test")
+        testTextField.translatesAutoresizingMaskIntoConstraints = false
+        return testTextField
+    }()
+    
     //MARK: - Lifecycle
 
     override init(frame: CGRect) {
@@ -95,6 +101,15 @@ class InfoTabView: UIView {
             viewLabel.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 1/10)
         ])
         
+        //test animated placeholder
+        self.addSubview(animatedTextField)
+        NSLayoutConstraint.activate([
+            animatedTextField.topAnchor.constraint(equalTo: viewLabel.bottomAnchor),
+            animatedTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            animatedTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            animatedTextField.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 1/10)
+        ])
+        
         //add views to stack views
         labelStackView.addArrangedSubview(ageLabel)
         labelStackView.addArrangedSubview(heightLabel)
@@ -110,7 +125,7 @@ class InfoTabView: UIView {
         
         //set constraints for stack views
         NSLayoutConstraint.activate([
-            labelStackView.topAnchor.constraint(equalTo: viewLabel.bottomAnchor),
+            labelStackView.topAnchor.constraint(equalTo: animatedTextField.bottomAnchor),
             labelStackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             labelStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             labelStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
