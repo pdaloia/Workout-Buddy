@@ -65,8 +65,17 @@ class UIAnimatedPlaceHolderTextField: UIView {
             animatedLabel.trailingAnchor.constraint(equalTo: textField.trailingAnchor)
         ])
         
-        //add the placeholder to the textbox
-        textField.placeholder = initialPlaceholder
+        //add the uilabel mimicking the placeholder
+        animatedLabel.text = initialPlaceholder
+        
+        //add the textfields editing event
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        
+        print("editing lol")
         
     }
     
