@@ -75,7 +75,16 @@ class UIAnimatedPlaceHolderTextField: UIView {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         
-        print("editing lol")
+        guard let text = textField.text else {
+            return
+        }
+        
+        if(!text.isEmpty) {
+            self.animatedLabel.isHidden = true
+        }
+        else {
+            self.animatedLabel.isHidden = false
+        }
         
     }
     
