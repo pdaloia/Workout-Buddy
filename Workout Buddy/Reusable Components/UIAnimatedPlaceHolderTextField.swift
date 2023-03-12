@@ -11,6 +11,8 @@ class UIAnimatedPlaceHolderTextField: UIView {
     
     //MARK: Properties
     
+    private var isTextFieldPopulated: Bool = false
+    
     private lazy var animatedLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -79,11 +81,13 @@ class UIAnimatedPlaceHolderTextField: UIView {
             return
         }
         
-        if(!text.isEmpty) {
-            self.animatedLabel.isHidden = true
+        if(text.isEmpty && self.isTextFieldPopulated) {
+            self.isTextFieldPopulated = false
+            print(self.isTextFieldPopulated )
         }
-        else {
-            self.animatedLabel.isHidden = false
+        else if (!text.isEmpty && !self.isTextFieldPopulated) {
+            self.isTextFieldPopulated = true
+            print(self.isTextFieldPopulated )
         }
         
     }
