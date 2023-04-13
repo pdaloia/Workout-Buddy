@@ -13,6 +13,11 @@ class UIAnimatedPlaceHolderTextField: UIView {
     
     private var isTextFieldPopulated: Bool = false
     
+    private var textFieldConstraints: [NSLayoutConstraint] = []
+    
+    private var emptyAnimatedPlaceholderConstraints: [NSLayoutConstraint] = []
+    private var populatedAnimatedPlaceholderConstraints: [NSLayoutConstraint] = []
+    
     private lazy var animatedLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -23,12 +28,6 @@ class UIAnimatedPlaceHolderTextField: UIView {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
-    }()
-    
-    private lazy var placeholderView: UIView = {
-        let placeholderView = UIView()
-        placeholderView.translatesAutoresizingMaskIntoConstraints = false
-        return placeholderView
     }()
     
     //MARK: Lifecycle
@@ -47,25 +46,41 @@ class UIAnimatedPlaceHolderTextField: UIView {
     //MARK: Functions
     func initializeView(initialPlaceholder: String) {
         
+        print("init")
+        
         //add the subviews
         self.addSubview(animatedLabel)
         self.addSubview(textField)
         
-        //set the constraints on the text field view
-        NSLayoutConstraint.activate([
-            textField.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            textField.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            textField.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 4/5)
-        ])
+        //add the constraints for the empty textfield and activate them
+        textFieldConstraints = [
+            self.textField.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.textField.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.textField.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.textField.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 3/4)
+        ]
+        textFieldConstraints.forEach { constraint in
+            constraint.isActive = true
+        }
         
-        //set the constraints on the animated label
-        NSLayoutConstraint.activate([
-            animatedLabel.topAnchor.constraint(equalTo: textField.topAnchor),
-            animatedLabel.bottomAnchor.constraint(equalTo: textField.bottomAnchor),
-            animatedLabel.leadingAnchor.constraint(equalTo: textField.leadingAnchor),
-            animatedLabel.trailingAnchor.constraint(equalTo: textField.trailingAnchor)
-        ])
+        //add the initial constraint for the empty label immitating the placeholder and activate them
+        emptyAnimatedPlaceholderConstraints = [
+            self.animatedLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.animatedLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.animatedLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.animatedLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 3/4)
+        ]
+        emptyAnimatedPlaceholderConstraints.forEach { constraint in
+            constraint.isActive = true
+        }
+        
+        //create array for constraints for the placeholder label when the text field is populated, dont activate them yet
+        populatedAnimatedPlaceholderConstraints = [
+            self.animatedLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.animatedLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.animatedLabel.bottomAnchor.constraint(equalTo: self.textField.topAnchor),
+            self.animatedLabel.topAnchor.constraint(equalTo: self.topAnchor)
+        ]
         
         //add the uilabel mimicking the placeholder
         animatedLabel.text = initialPlaceholder
@@ -83,11 +98,39 @@ class UIAnimatedPlaceHolderTextField: UIView {
         
         if(text.isEmpty && self.isTextFieldPopulated) {
             self.isTextFieldPopulated = false
-            print(self.isTextFieldPopulated )
+            animatePlaceholderConstraints()
         }
         else if (!text.isEmpty && !self.isTextFieldPopulated) {
             self.isTextFieldPopulated = true
-            print(self.isTextFieldPopulated )
+            animatePlaceholderConstraints()
+        }
+        
+    }
+    
+    func animatePlaceholderConstraints() {
+        
+        //animate the constraint changes
+        UIView.animate(withDuration: 0.5) {
+            
+            if(self.isTextFieldPopulated) {
+                self.emptyAnimatedPlaceholderConstraints.forEach { constraint in
+                    constraint.isActive = false
+                }
+                self.populatedAnimatedPlaceholderConstraints.forEach { constraint in
+                    constraint.isActive = true
+                }
+            }
+            else {
+                self.populatedAnimatedPlaceholderConstraints.forEach { constraint in
+                    constraint.isActive = false
+                }
+                self.emptyAnimatedPlaceholderConstraints.forEach { constraint in
+                    constraint.isActive = true
+                }
+            }
+            
+            self.layoutIfNeeded()
+            
         }
         
     }
