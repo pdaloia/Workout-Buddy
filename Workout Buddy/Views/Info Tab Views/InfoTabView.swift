@@ -21,59 +21,22 @@ class InfoTabView: UIView {
         return label
     }()
     
-    private lazy var ageLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Age:"
-        return label
-    }()
-    
-    private lazy var ageInputField: UITextField = {
-        let textField = UITextField()
+    private lazy var ageInputField: UIAnimatedPlaceHolderTextField = {
+        let textField = UIAnimatedPlaceHolderTextField(initialPlaceholder: "Enter your age", editedPlaceholder: "Age")
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    private lazy var heightLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Weight:"
-        return label
-    }()
-    
-    private lazy var heightInputField: UITextField = {
-        let textField = UITextField()
+    private lazy var heightInputField: UIAnimatedPlaceHolderTextField = {
+        let textField = UIAnimatedPlaceHolderTextField(initialPlaceholder: "Enter your height", editedPlaceholder: "Height" )
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    private lazy var weightLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Weight:"
-        return label
-    }()
-    
-    private lazy var weightInputField: UITextField = {
-        let textField = UITextField()
+    private lazy var weightInputField: UIAnimatedPlaceHolderTextField = {
+        let textField = UIAnimatedPlaceHolderTextField(initialPlaceholder: "Enter your weight", editedPlaceholder: "Weight")
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
-    }()
-    
-    private lazy var labelStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
-    private lazy var inputStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
-    private lazy var animatedTextField: UIAnimatedPlaceHolderTextField = {
-        let testTextField = UIAnimatedPlaceHolderTextField(initialPlaceholder: "This is a test", editedPlaceholder: "Test")
-        testTextField.translatesAutoresizingMaskIntoConstraints = false
-        return testTextField
     }()
     
     //MARK: - Lifecycle
@@ -101,41 +64,30 @@ class InfoTabView: UIView {
             viewLabel.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 1/10)
         ])
         
-        //test animated placeholder
-        self.addSubview(animatedTextField)
+        //add the input views and create + activate their constraints
+        self.addSubview(ageInputField)
+        self.addSubview(heightInputField)
+        self.addSubview(weightInputField)
+        
         NSLayoutConstraint.activate([
-            animatedTextField.topAnchor.constraint(equalTo: viewLabel.bottomAnchor),
-            animatedTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            animatedTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            animatedTextField.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 1/10)
-        ])
-        
-        //add views to stack views
-        labelStackView.addArrangedSubview(ageLabel)
-        labelStackView.addArrangedSubview(heightLabel)
-        labelStackView.addArrangedSubview(weightLabel)
-        
-        inputStackView.addArrangedSubview(ageInputField)
-        inputStackView.addArrangedSubview(heightInputField)
-        inputStackView.addArrangedSubview(weightInputField)
-        
-        //add the stack views to the view
-        self.addSubview(labelStackView)
-        self.addSubview(inputStackView)
-        
-        //set constraints for stack views
-        NSLayoutConstraint.activate([
-            labelStackView.topAnchor.constraint(equalTo: animatedTextField.bottomAnchor),
-            labelStackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            labelStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            labelStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+            self.ageInputField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.ageInputField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.ageInputField.topAnchor.constraint(equalTo: self.viewLabel.bottomAnchor, constant: 20),
+            self.ageInputField.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         NSLayoutConstraint.activate([
-            inputStackView.topAnchor.constraint(equalTo: labelStackView .topAnchor),
-            inputStackView.leadingAnchor.constraint(equalTo: labelStackView.trailingAnchor),
-            inputStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            inputStackView.heightAnchor.constraint(equalTo: labelStackView.heightAnchor)
+            self.heightInputField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.heightInputField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.heightInputField.topAnchor.constraint(equalTo: self.ageInputField.bottomAnchor, constant: 20),
+            self.heightInputField.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        NSLayoutConstraint.activate([
+            self.weightInputField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.weightInputField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.weightInputField.topAnchor.constraint(equalTo: self.heightInputField.bottomAnchor, constant: 20),
+            self.weightInputField.heightAnchor.constraint(equalToConstant: 50)
         ])
         
     }
