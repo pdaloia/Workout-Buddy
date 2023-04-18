@@ -18,6 +18,9 @@ class UIAnimatedPlaceHolderTextField: UIView {
     private var emptyAnimatedPlaceholderConstraints: [NSLayoutConstraint] = []
     private var populatedAnimatedPlaceholderConstraints: [NSLayoutConstraint] = []
     
+    private var initialPlaceholderText = ""
+    private var editedPlaceholderText = ""
+    
     private lazy var animatedLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +38,11 @@ class UIAnimatedPlaceHolderTextField: UIView {
     init(initialPlaceholder: String, editedPlaceholder: String) {
         
         super.init(frame: .zero)
-        initializeView(initialPlaceholder: initialPlaceholder)
+        
+        self.initialPlaceholderText = initialPlaceholder
+        self.editedPlaceholderText = editedPlaceholder
+        
+        initializeView()
         
     }
     
@@ -44,9 +51,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
     }
     
     //MARK: Functions
-    func initializeView(initialPlaceholder: String) {
-        
-        print("init")
+    func initializeView() {
         
         //add the subviews
         self.addSubview(animatedLabel)
@@ -83,7 +88,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
         ]
         
         //add the uilabel mimicking the placeholder
-        animatedLabel.text = initialPlaceholder
+        animatedLabel.text = self.initialPlaceholderText
         
         //add the textfields editing event
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -110,7 +115,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
     func animatePlaceholderConstraints() {
         
         //animate the constraint changes
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .transitionCrossDissolve) {
             
             if(self.isTextFieldPopulated) {
                 self.emptyAnimatedPlaceholderConstraints.forEach { constraint in
@@ -119,6 +124,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
                 self.populatedAnimatedPlaceholderConstraints.forEach { constraint in
                     constraint.isActive = true
                 }
+                self.animatedLabel.text = self.editedPlaceholderText
             }
             else {
                 self.populatedAnimatedPlaceholderConstraints.forEach { constraint in
@@ -127,6 +133,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
                 self.emptyAnimatedPlaceholderConstraints.forEach { constraint in
                     constraint.isActive = true
                 }
+                self.animatedLabel.text = self.initialPlaceholderText
             }
             
             self.layoutIfNeeded()
