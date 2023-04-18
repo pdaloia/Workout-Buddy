@@ -51,7 +51,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
     }
     
     //MARK: Functions
-    func initializeView() {
+    private func initializeView() {
         
         //add the subviews
         self.addSubview(animatedLabel)
@@ -95,7 +95,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
         
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
+    @objc private func textFieldDidChange(_ textField: UITextField) {
         
         guard let text = textField.text else {
             return
@@ -112,7 +112,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
         
     }
     
-    func animatePlaceholderConstraints() {
+    private func animatePlaceholderConstraints() {
         
         //animate the constraint changes
         UIView.animate(withDuration: 0.5, delay: 0, options: .transitionCrossDissolve) {
@@ -139,6 +139,12 @@ class UIAnimatedPlaceHolderTextField: UIView {
             self.layoutIfNeeded()
             
         }
+        
+    }
+    
+    public func getTextFieldText() -> String {
+        
+        return self.textField.text ?? ""
         
     }
     
