@@ -23,6 +23,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
     
     private lazy var animatedLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,6 +54,10 @@ class UIAnimatedPlaceHolderTextField: UIView {
     //MARK: Functions
     private func initializeView() {
         
+        //Set the view
+        self.layer.cornerRadius = 7
+        self.backgroundColor = .lightGray
+        
         //add the subviews
         self.addSubview(animatedLabel)
         self.addSubview(textField)
@@ -60,8 +65,8 @@ class UIAnimatedPlaceHolderTextField: UIView {
         //add the constraints for the empty textfield and activate them
         textFieldConstraints = [
             self.textField.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.textField.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.textField.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.textField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 3),
+            self.textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -3),
             self.textField.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 3/4)
         ]
         textFieldConstraints.forEach { constraint in
@@ -71,8 +76,8 @@ class UIAnimatedPlaceHolderTextField: UIView {
         //add the initial constraint for the empty label immitating the placeholder and activate them
         emptyAnimatedPlaceholderConstraints = [
             self.animatedLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.animatedLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.animatedLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.animatedLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 3),
+            self.animatedLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -3),
             self.animatedLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 3/4)
         ]
         emptyAnimatedPlaceholderConstraints.forEach { constraint in
@@ -81,10 +86,10 @@ class UIAnimatedPlaceHolderTextField: UIView {
         
         //create array for constraints for the placeholder label when the text field is populated, dont activate them yet
         populatedAnimatedPlaceholderConstraints = [
-            self.animatedLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.animatedLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.animatedLabel.bottomAnchor.constraint(equalTo: self.textField.topAnchor),
-            self.animatedLabel.topAnchor.constraint(equalTo: self.topAnchor)
+            self.animatedLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 3),
+            self.animatedLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -3),
+            self.animatedLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            self.animatedLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/2)
         ]
         
         //add the uilabel mimicking the placeholder
@@ -117,6 +122,7 @@ class UIAnimatedPlaceHolderTextField: UIView {
         //animate the constraint changes
         UIView.animate(withDuration: 0.5, delay: 0, options: .transitionCrossDissolve) {
             
+            //If the text field is populated with characters, we will move the animated label/placeholder up
             if(self.isTextFieldPopulated) {
                 self.emptyAnimatedPlaceholderConstraints.forEach { constraint in
                     constraint.isActive = false
@@ -124,8 +130,10 @@ class UIAnimatedPlaceHolderTextField: UIView {
                 self.populatedAnimatedPlaceholderConstraints.forEach { constraint in
                     constraint.isActive = true
                 }
-                self.animatedLabel.text = self.editedPlaceholderText
+                self.setPopulatedLabelProperties()
             }
+            
+            //If the text field is empty, we will move the animated placeholder back to on top of the text field
             else {
                 self.populatedAnimatedPlaceholderConstraints.forEach { constraint in
                     constraint.isActive = false
@@ -133,12 +141,28 @@ class UIAnimatedPlaceHolderTextField: UIView {
                 self.emptyAnimatedPlaceholderConstraints.forEach { constraint in
                     constraint.isActive = true
                 }
-                self.animatedLabel.text = self.initialPlaceholderText
+                self.setEmptyLabelProperties()
             }
             
             self.layoutIfNeeded()
             
         }
+        
+    }
+    
+    private func setPopulatedLabelProperties() {
+        
+        animatedLabel.font = UIFont.systemFont(ofSize: 14)
+        animatedLabel.textColor = .blue
+        self.animatedLabel.text = self.editedPlaceholderText
+        
+    }
+    
+    private func setEmptyLabelProperties() {
+        
+        animatedLabel.font = UIFont.systemFont(ofSize: 18)
+        animatedLabel.textColor = .gray
+        self.animatedLabel.text = self.initialPlaceholderText
         
     }
     
