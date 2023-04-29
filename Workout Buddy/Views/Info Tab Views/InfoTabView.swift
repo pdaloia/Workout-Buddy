@@ -17,6 +17,8 @@ class InfoTabView: UIView {
         let label = UILabel()
         label.text = "Personal Information"
         label.textAlignment = .center
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

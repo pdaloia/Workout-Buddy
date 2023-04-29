@@ -50,7 +50,7 @@ class MainViewController: UITabBarController {
     
     func initializeView() {
         
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .black
         
     }
     

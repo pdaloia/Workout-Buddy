@@ -11,6 +11,10 @@ class InfoTabViewController: UIViewController {
 
     //MARK: - Properties
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     //MARK: - Views
     
     private lazy var infoTabView: InfoTabView = {
@@ -29,6 +33,8 @@ class InfoTabViewController: UIViewController {
     //MARK: - Functions
     
     func initializeView() {
+        
+        setNeedsStatusBarAppearanceUpdate()
         
         self.view.addSubview(self.infoTabView)
         self.infoTabView.translatesAutoresizingMaskIntoConstraints = false
