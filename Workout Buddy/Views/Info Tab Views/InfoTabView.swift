@@ -41,6 +41,16 @@ class InfoTabView: UIView {
         return textField
     }()
     
+    private lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+        button.backgroundColor = .blue
+        button.layer.cornerRadius = 7
+        button.setTitle("Save", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     //MARK: - Lifecycle
 
     override init(frame: CGRect) {
@@ -91,6 +101,20 @@ class InfoTabView: UIView {
             self.weightInputField.topAnchor.constraint(equalTo: self.heightInputField.bottomAnchor, constant: 20),
             self.weightInputField.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        //Add the save button and set its constraints
+        self.addSubview(saveButton)
+        NSLayoutConstraint.activate([
+            saveButton.topAnchor.constraint(equalTo: weightInputField.bottomAnchor, constant: 20),
+            saveButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            saveButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/3)
+        ])
+        
+    }
+    
+    @objc private func saveButtonPressed() {
+        
+        print("Saving!!!")
         
     }
     
