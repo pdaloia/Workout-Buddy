@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE02B70C2A00A41B002DCBE3 /* Routine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02B70A2A00A41B002DCBE3 /* Routine+CoreDataClass.swift */; };
+		FE02B70D2A00A41B002DCBE3 /* Routine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02B70B2A00A41B002DCBE3 /* Routine+CoreDataProperties.swift */; };
 		FE231CF729B6729B0022F549 /* UIAnimatedPlaceHolderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE231CF629B6729A0022F549 /* UIAnimatedPlaceHolderTextField.swift */; };
 		FE307BDA2999DC2E00D0EC25 /* InfoTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BD92999DC2E00D0EC25 /* InfoTabViewController.swift */; };
 		FE307BDC2999DC4100D0EC25 /* RoutinesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BDB2999DC4100D0EC25 /* RoutinesTabViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE02B70A2A00A41B002DCBE3 /* Routine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routine+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FE02B70B2A00A41B002DCBE3 /* Routine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routine+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FE231CF629B6729A0022F549 /* UIAnimatedPlaceHolderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimatedPlaceHolderTextField.swift; sourceTree = "<group>"; };
 		FE307BD92999DC2E00D0EC25 /* InfoTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTabViewController.swift; sourceTree = "<group>"; };
 		FE307BDB2999DC4100D0EC25 /* RoutinesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesTabViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 		FEC426F52774E9B40050F622 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE02B70A2A00A41B002DCBE3 /* Routine+CoreDataClass.swift */,
+				FE02B70B2A00A41B002DCBE3 /* Routine+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,7 +277,9 @@
 				FE307BE6299B3CB100D0EC25 /* WorkoutTabView.swift in Sources */,
 				FE307BDE2999DC4E00D0EC25 /* WorkoutTabViewController.swift in Sources */,
 				FE231CF729B6729B0022F549 /* UIAnimatedPlaceHolderTextField.swift in Sources */,
+				FE02B70D2A00A41B002DCBE3 /* Routine+CoreDataProperties.swift in Sources */,
 				FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */,
+				FE02B70C2A00A41B002DCBE3 /* Routine+CoreDataClass.swift in Sources */,
 				FE307BDC2999DC4100D0EC25 /* RoutinesTabViewController.swift in Sources */,
 				FE307BE02999DC5B00D0EC25 /* HistoryTabViewController.swift in Sources */,
 				FE5F797A29EF2B9000EDE55F /* WorkoutBuddyDataModel.xcdatamodeld in Sources */,
