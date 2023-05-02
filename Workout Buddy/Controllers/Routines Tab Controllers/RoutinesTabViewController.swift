@@ -11,6 +11,10 @@ class RoutinesTabViewController: UIViewController {
 
     //MARK: - Properties
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     //MARK: - Views
     
     private lazy var routinesTabView: RoutinesTabView = {
@@ -29,6 +33,8 @@ class RoutinesTabViewController: UIViewController {
     //MARK: - Functions
     
     func initializeView() {
+        
+        setNeedsStatusBarAppearanceUpdate()
         
         self.view.addSubview(self.routinesTabView)
         self.routinesTabView.translatesAutoresizingMaskIntoConstraints = false

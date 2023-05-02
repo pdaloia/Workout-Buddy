@@ -16,6 +16,8 @@ class RoutinesTabView: UIView {
     private lazy var viewLabel: UILabel = {
         let label = UILabel()
         label.text = "Routine Tab"
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -29,7 +31,9 @@ class RoutinesTabView: UIView {
     private lazy var newRoutineSaveButton: UIButton = {
         let button = UIButton()
         button.setTitle("Save", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .blue
+        button.layer.cornerRadius = 7
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
         return button
@@ -61,15 +65,16 @@ class RoutinesTabView: UIView {
         self.addSubview(self.newRoutineNameTextField)
         NSLayoutConstraint.activate([
             newRoutineNameTextField.topAnchor.constraint(equalTo: self.viewLabel.bottomAnchor, constant: 20),
-            newRoutineNameTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            newRoutineNameTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            newRoutineNameTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            newRoutineNameTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             newRoutineNameTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         self.addSubview(newRoutineSaveButton)
         NSLayoutConstraint.activate([
             newRoutineSaveButton.topAnchor.constraint(equalTo: newRoutineNameTextField.bottomAnchor, constant: 20),
-            newRoutineSaveButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor)
+            newRoutineSaveButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            newRoutineSaveButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4)
         ])
         
     }
