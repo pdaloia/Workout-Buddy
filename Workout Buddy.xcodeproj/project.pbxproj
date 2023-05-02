@@ -18,9 +18,6 @@
 		FE307BE8299B3CBE00D0EC25 /* HistoryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE307BE7299B3CBE00D0EC25 /* HistoryTabView.swift */; };
 		FE5F797A29EF2B9000EDE55F /* WorkoutBuddyDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE5F797829EF2B9000EDE55F /* WorkoutBuddyDataModel.xcdatamodeld */; };
 		FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426F82774EA9F0050F622 /* MainViewController.swift */; };
-		FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FC27761EC10050F622 /* WorkoutSet.swift */; };
-		FEC426FF2776206F0050F622 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC426FE2776206F0050F622 /* Workout.swift */; };
-		FEC427012776231F0050F622 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC427002776231F0050F622 /* Routine.swift */; };
 		FECD731E27678D8D0074BECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD731D27678D8D0074BECF /* AppDelegate.swift */; };
 		FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD731F27678D8D0074BECF /* SceneDelegate.swift */; };
 		FECD732227678D8D0074BECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECD732127678D8D0074BECF /* ViewController.swift */; };
@@ -40,9 +37,6 @@
 		FE307BE7299B3CBE00D0EC25 /* HistoryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabView.swift; sourceTree = "<group>"; };
 		FE5F797929EF2B9000EDE55F /* WorkoutBuddyDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutBuddyDataModel.xcdatamodel; sourceTree = "<group>"; };
 		FEC426F82774EA9F0050F622 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		FEC426FC27761EC10050F622 /* WorkoutSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSet.swift; sourceTree = "<group>"; };
-		FEC426FE2776206F0050F622 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		FEC427002776231F0050F622 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		FECD731A27678D8D0074BECF /* Workout Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECD731D27678D8D0074BECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FECD731F27678D8D0074BECF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,9 +132,6 @@
 		FEC426F52774E9B40050F622 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FEC426FC27761EC10050F622 /* WorkoutSet.swift */,
-				FEC426FE2776206F0050F622 /* Workout.swift */,
-				FEC427002776231F0050F622 /* Routine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,15 +269,12 @@
 				FE307BE4299B3C9E00D0EC25 /* RoutinesTabView.swift in Sources */,
 				FECD731E27678D8D0074BECF /* AppDelegate.swift in Sources */,
 				FE307BE6299B3CB100D0EC25 /* WorkoutTabView.swift in Sources */,
-				FEC426FF2776206F0050F622 /* Workout.swift in Sources */,
 				FE307BDE2999DC4E00D0EC25 /* WorkoutTabViewController.swift in Sources */,
 				FE231CF729B6729B0022F549 /* UIAnimatedPlaceHolderTextField.swift in Sources */,
-				FEC426FD27761EC20050F622 /* WorkoutSet.swift in Sources */,
 				FECD732027678D8D0074BECF /* SceneDelegate.swift in Sources */,
 				FE307BDC2999DC4100D0EC25 /* RoutinesTabViewController.swift in Sources */,
 				FE307BE02999DC5B00D0EC25 /* HistoryTabViewController.swift in Sources */,
 				FE5F797A29EF2B9000EDE55F /* WorkoutBuddyDataModel.xcdatamodeld in Sources */,
-				FEC427012776231F0050F622 /* Routine.swift in Sources */,
 				FEC426F92774EA9F0050F622 /* MainViewController.swift in Sources */,
 				FE307BDA2999DC2E00D0EC25 /* InfoTabViewController.swift in Sources */,
 			);
