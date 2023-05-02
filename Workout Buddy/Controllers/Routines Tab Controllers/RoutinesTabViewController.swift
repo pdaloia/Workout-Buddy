@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RoutinesTabViewController: UIViewController, RoutinesTabViewProtocol {
 
@@ -17,11 +18,14 @@ class RoutinesTabViewController: UIViewController, RoutinesTabViewProtocol {
     
     private var routines = [Routine]()
     
+    private var managedObjectContext: NSManagedObjectContext?
+    
     //MARK: - Views
     
     private lazy var routinesTabView: RoutinesTabView = {
         let view = RoutinesTabView()
         view.routinesTabViewDelegate = self
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -29,6 +33,8 @@ class RoutinesTabViewController: UIViewController, RoutinesTabViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
         self.initializeView()
     }
@@ -40,11 +46,12 @@ class RoutinesTabViewController: UIViewController, RoutinesTabViewProtocol {
         setNeedsStatusBarAppearanceUpdate()
         
         self.view.addSubview(self.routinesTabView)
-        self.routinesTabView.translatesAutoresizingMaskIntoConstraints = false
-        self.routinesTabView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.routinesTabView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        self.routinesTabView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        self.routinesTabView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.routinesTabView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.routinesTabView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.routinesTabView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.routinesTabView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        ])
         
     }
     
@@ -53,6 +60,20 @@ class RoutinesTabViewController: UIViewController, RoutinesTabViewProtocol {
     func save(routine name: String) {
         
         print("Saving: " + name)
+        
+        guard let context = self.managedObjectContext else {
+            print("Failed getting the context for Core Data")
+            return
+        }
+        
+        let newRoutine = Routine(context: context)
+        newRoutine.name = name
+        
+        do {
+            try context.save()
+        } catch {
+            print("Failed while saving new routine")
+        }
         
     }
 
