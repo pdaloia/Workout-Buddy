@@ -18,7 +18,11 @@ class RoutinesTabViewController: UIViewController, RoutinesTabViewProtocol {
     
     private var routines = [Routine]()
     
-    private var managedObjectContext: NSManagedObjectContext?
+    private lazy var persistentContainer: NSPersistentContainer = {
+        NSPersistentContainer(name: "WorkoutBuddyDataModel")
+    }()
+    
+    var managedObjectContext: NSManagedObjectContext?
     
     //MARK: - Views
     
@@ -34,7 +38,8 @@ class RoutinesTabViewController: UIViewController, RoutinesTabViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        self.managedObjectContext = persistentContainer.viewContext
+        retrieveRoutines()
 
         self.initializeView()
     }
@@ -55,22 +60,51 @@ class RoutinesTabViewController: UIViewController, RoutinesTabViewProtocol {
         
     }
     
+    func retrieveRoutines() {
+        
+        persistentContainer.loadPersistentStores { [weak self] persistentStoreDescription, error in
+            
+            if let error = error {
+                print("Unable to retrieve Routines from persistent store")
+                print(error)
+
+            } else {
+                //retrieve Rotuines
+                let fetchRequest: NSFetchRequest<Routine> = Routine.fetchRequest()
+                
+                self?.persistentContainer.viewContext.perform {
+                    do {
+                        let result = try fetchRequest.execute()
+                        
+                        for routine in result {
+                            print(routine.name ?? "")
+                        }
+                    } catch {
+                        print("Unable to retrieve routines while executing fetch request.")
+                        print(error)
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
     //MARK: - RoutinesTabViewProtocol Functions
     
     func save(routine name: String) {
         
         print("Saving: " + name)
         
-        guard let context = self.managedObjectContext else {
-            print("Failed getting the context for Core Data")
-            return
+        guard let managedObjectContext = managedObjectContext else {
+            fatalError("No Managed Object Context Available")
         }
         
-        let newRoutine = Routine(context: context)
+        let newRoutine = Routine(context: managedObjectContext)
         newRoutine.name = name
         
         do {
-            try context.save()
+            try managedObjectContext.save()
         } catch {
             print("Failed while saving new routine")
         }
