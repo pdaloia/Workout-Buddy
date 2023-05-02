@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RoutinesTabViewController: UIViewController {
+class RoutinesTabViewController: UIViewController, RoutinesTabViewProtocol {
 
     //MARK: - Properties
     
@@ -15,10 +15,13 @@ class RoutinesTabViewController: UIViewController {
         return .lightContent
     }
     
+    private var routines = [Routine]()
+    
     //MARK: - Views
     
     private lazy var routinesTabView: RoutinesTabView = {
         let view = RoutinesTabView()
+        view.routinesTabViewDelegate = self
         return view
     }()
     
@@ -42,6 +45,14 @@ class RoutinesTabViewController: UIViewController {
         self.routinesTabView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         self.routinesTabView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         self.routinesTabView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        
+    }
+    
+    //MARK: - RoutinesTabViewProtocol Functions
+    
+    func save(routine name: String) {
+        
+        print("Saving: " + name)
         
     }
 

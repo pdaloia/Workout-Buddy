@@ -11,6 +11,8 @@ class RoutinesTabView: UIView {
 
     //MARK: - Properties
     
+    weak var routinesTabViewDelegate: RoutinesTabViewProtocol?
+    
     //MARK: - Views
     
     private lazy var viewLabel: UILabel = {
@@ -81,8 +83,16 @@ class RoutinesTabView: UIView {
     
     @objc func saveButtonClicked() {
         
-        print("saving!!!")
+        if let delegate = self.routinesTabViewDelegate {
+            delegate.save(routine: self.newRoutineNameTextField.getTextFieldText())
+        }
         
     }
 
+}
+
+protocol RoutinesTabViewProtocol : AnyObject {
+    
+    func save(routine name: String)
+    
 }
